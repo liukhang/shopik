@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/ShopikLayout/Shopik_Layout1.cshtml";
+}
+
+<section class="page-content">
+    <!-- PAGE-BANNER START -->
+    <div class="page-banner-area  margin-bottom-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-banner-menu">
+                        <h2 class="page-banner-title">Login</h2>
+                        <ul>
+                            <li><a href="index.html">home</a></li>
+                            <li>Login</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- PAGE-BANNER END -->
+    <!-- LOGIN-AREA START -->
+    <div class="lognin-area">
+        <div class="container">
+            <div class="row">
+                <!-- Registered-Customers Start -->
+                <div class="col-md-6">
+                    <h1>@ViewBag.ThongBao</h1>
+                    @using (Html.BeginForm())
+                    {
+                        <div class="registered-customers">
+                            <h2 class="login-title">Login</h2>
+                            <div class="registered">
+                                <p>If you have an account with us, Please log in.</p>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="text" class="custom-form" name="txtEmail" placeholder="Email Address" required="required">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="password" class="custom-form" name="txtMatKhau" placeholder="Password" required="required">
+                                    </div>
+                                </div>
+                                <p><label class="forgot"><a href="#">Forgot your password?</a></label></p>
+                                <input type="submit" class="custom-submit-2" value="login">
+                            </div>
+                        </div>
+                    }
+                </div>
+                <!-- Registered-Customers End -->
+                
+            </div>
+        </div>
+    </div>
+    <!-- LOGIN-AREA END -->
+    <!-- BRAND-LOGO-AREA START -->
+    <div class="brand-logo-area margin-bottom-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-12">
+                    <div class="brand-brief">
+                        <h2 class="border-left-right">they are with us</h2>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-12">
+                    <div class="brand-logo fix">
+                        <div class="single-logo">
+                            <img src="~/Content/shopik/img/brand/1.png" alt="">
+                        </div>
+                        <div class="single-logo">
+                            <img src="~/Content/shopik/img/brand/2.png" alt="">
+                        </div>
+                        <div class="single-logo">
+                            <img src="~/Content/shopik/img/brand/3.png" alt="">
+                        </div>
+                        <div class="single-logo">
+                            <img src="~/Content/shopik/img/brand/4.png" alt="">
+                        </div>
+                        <div class="single-logo">
+                            <img src="~/Content/shopik/img/brand/5.png" alt="">
+                        </div>
+                        <div class="single-logo">
+                            <img src="~/Content/shopik/img/brand/6.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BRAND-LOGO-AREA END -->
+</section>

@@ -1,0 +1,85 @@
+﻿@model Shopik.Models.Product
+
+@{
+    ViewBag.Title = "DetailsProduct";
+    Layout = "~/Views/AdminLayout/Admin_Layout1.cshtml";
+    var imagePath = @Model.AnhBia;
+}
+
+<h2>DetailsProduct</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayCapNhat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayCapNhat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnhBia)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("~/HinhAnhSP/"+@imagePath)" style="width:50px;height:50px;" />
+            @Html.DisplayFor(model => model.AnhBia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cate.CateName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cate.CateName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChuDe.ChuDeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChuDe.ChuDeName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditProduct", new { @id = Model.id }) |
+    @Html.ActionLink("Back to List", "Product")
+</p>

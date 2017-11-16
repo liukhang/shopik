@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Shopik.Models.ChuDe>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Admin_Layout1.cshtml";
+}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ChuDeName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChuDeName)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "XoaChuDe", new { @id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

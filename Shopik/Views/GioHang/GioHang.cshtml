@@ -1,0 +1,168 @@
+﻿
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/ShopikLayout/Shopik_Layout1.cshtml";
+}
+<section class="page-content">
+    <!-- PAGE-BANNER START -->
+    <div class="page-banner-area photo-3 margin-bottom-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-banner-menu">
+                        <h2 class="page-banner-title">Shopping Cart</h2>
+                        <ul>
+                            <li><a href="index.html">home</a></li>
+                            <li>Shoping Cart</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- PAGE-BANNER END -->
+    <!-- SHOPPING-CART-AREA START -->
+    <div class="shopping-cart-area margin-bottom-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    @using (Html.BeginForm("DatHang", "GioHang"))
+                    {
+                        <div class="table-content table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="product-thumbnail">Image</th>
+                                        <th class="product-name">Name</th>
+                                        <th class="product-price">price</th>
+                                        <th class="product-quantity">Quantity</th>
+                                        <th class="product-remove">Remove</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                    <tr>
+                                        <td class="product-thumbnail"><a href="#"><img src="@Url.Content("~/HinhAnhSP/" + item.AnhBia)" width="50" height="50" alt=""></a></td>
+                                        <td class="product-name"><a href="#">@item.ProductName</a></td>
+                                        <td class="product-price"><span class="amount">@item.Price</span></td>
+                                        <td class="product-quantity"><input type="text" value="@item.SoLuong"></td>
+                                        <td class="product-remove"><a href="#"><i class="pe-7s-close"></i></a></td>
+                                    </tr>
+                                    }
+                                </tbody>
+                                
+                            </table>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="coupon">
+                                    
+                                <span>@Html.ActionLink("Chỉnh sửa giỏ hàng", "SuaGioHang")</span>
+                            </div>
+                        </div>
+                        <div class="checkout-bill-order">
+                            <form action="#">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="checkout-bill">
+                                            <h3 class="title-7 margin-bottom-50">Billing Details</h3>
+                                        </div>
+                                        <div class="row coupon-info">
+                                            <div class="col-md-6">
+                                                <p class="form-row-first">
+                                                    <label>Ho Ten<span class="required">*</span></label>
+                                                    <input type="text" id="HoTen" name="HoTen" required="required">
+                                                </p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="form-row-last">
+                                                    <label>Email<span class="required">*</span></label>
+                                                    <input type="email" id="Email" name="Email" required="required">
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row coupon-info">
+                                            <div class="col-md-6">
+                                                <p class="form-row-first">
+                                                    <label>Dia Chi<span class="required">*</span></label>
+                                                    <input type="text" id="DiaChi" name="DiaChi" required="required">
+                                                </p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="form-row-last">
+                                                    <label>Phone  <span class="required">*</span></label>
+                                                    <input type="number" id="Phone" name="Phone" required="required">
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <h4 class="title-8">Ship to a different address <input type="checkbox" checked="checked"></h4>
+                                        
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="your-order">
+                                            <h3 class="title-7 margin-bottom-50">Your Order</h3>
+                                            <div class="your-order-table table-responsive">
+                                                <table>
+                                                    
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="product-name order-total">Order Total</td>
+                                                            <td class="product-total order-total">$1378.00</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <div class="payment-method">
+                                                    
+                                                    <div class="order-button-payment">
+                                                        <input type="submit" value="Đặt hàng" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SHOPPING-CART-AREA END -->
+    <!-- BRAND-LOGO-AREA START -->
+    <div class="brand-logo-area margin-bottom-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-12">
+                    <div class="brand-brief">
+                        <h2 class="border-left-right">they are with us</h2>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-12">
+                    <div class="brand-logo fix">
+                        <div class="single-logo">
+                            <img src="~/Content/shopik/img/brand/1.png" alt="">
+                        </div>
+                        <div class="single-logo">
+                            <img src="~/Content/shopik/img/brand/2.png" alt="">
+                        </div>
+                        <div class="single-logo">
+                            <img src="~/Content/shopik/img/brand/3.png" alt="">
+                        </div>
+                        <div class="single-logo">
+                            <img src="~/Content/shopik/img/brand/4.png" alt="">
+                        </div>
+                        <div class="single-logo">
+                            <img src="~/Content/shopik/img/brand/5.png" alt="">
+                        </div>
+                        <div class="single-logo">
+                            <img src="~/Content/shopik/img/brand/6.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BRAND-LOGO-AREA END -->
+</section>

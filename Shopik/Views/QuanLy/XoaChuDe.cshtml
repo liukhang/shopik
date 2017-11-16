@@ -1,0 +1,33 @@
+﻿@model Shopik.Models.ChuDe
+
+@{
+    ViewBag.Title = "XoaChuDe";
+    Layout = "~/Views/AdminLayout/Admin_Layout1.cshtml";
+}
+
+<h2>XoaChuDe</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ChuDe</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ChuDeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChuDeName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

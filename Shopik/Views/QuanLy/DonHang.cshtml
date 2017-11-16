@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Shopik.Models.DonHang>
+
+@{
+    ViewBag.Title = "DonHang";
+    Layout = "~/Views/AdminLayout/Admin_Layout1.cshtml";
+}
+
+<h2>DonHang</h2>
+
+<p>
+    @Html.ActionLink("ChiTietDonHang", "ChiTietDonHang")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayDat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoTen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Username)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayDat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoTen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.Username)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditDonHang", new { @id=item.id }) |
+            @Html.ActionLink("Delete", "XoaDonHang", new { @id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

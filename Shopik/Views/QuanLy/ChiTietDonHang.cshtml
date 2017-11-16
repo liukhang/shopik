@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Shopik.Models.ChiTietDonHang>
+
+@{
+    ViewBag.Title = "ChiTietDonHang";
+    Layout = "~/Views/AdminLayout/Admin_Layout1.cshtml";
+}
+
+<h2>ChiTietDonHang</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonHang.HoTen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.ProductName)
+        </th>
+        <th>
+            ProductID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonHang.HoTen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.id)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "XoaChiTietDonHang", new { @id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,171 @@
+﻿@using Shopik.Models;
+
+ <!-- Header-Top Start -->
+<div class="header-top hidden-xs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="header-top-left text-left">
+                    <ul>
+                        <li>
+                            <i class="sp-phone"></i>
+                            <span>+019 (111) 25184203</span>
+                        </li>
+                        <li>
+                            <i class="sp-email"></i>
+                            <span>Company@domain.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="header-top-right pull-right">
+                    <ul>
+                        <li>
+                            <a href="#">Account <span><i class="sp-gear"></i></span></a>
+                            <ul class="submenu">
+                                <li><a href="@Url.Action("Index","QuanLy")">My Account</a></li>
+                                <li><a href="@Url.Action("GioHang","GioHang")">Checkout</a></li>
+                                <li><a href="@Url.Action("DangNhap","NguoiDung")">Login</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="header-search">
+                        <form action="/TimKiem/KetQuaTimKiem" method="Post">
+                            <input type="text" placeholder="Search..."  name="txtTimKiem" id="txtTimKiem"/>
+                            <button type="submit"><i class="sp-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header-Top End -->
+<!-- Main-Header Start -->
+<div class="main-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-sm-6 col-xs-12">
+                <div class="logo">
+                    <a href="/"><img src="~/Content/shopik/img/logo.png" alt="" /></a>
+                </div>
+            </div>
+            <div class="col-md-8 hidden-sm hidden-xs">
+                <div class="main-menu pull-right">
+                    <nav>
+                        <ul>
+                            
+                            <li>
+                                <a href="/">home</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Men","ChuDe")">@ViewBag.men</a>
+                                <ul class="submenu">
+
+                                    @foreach (var item in ViewBag.catemen)
+                                    {
+                                        <li><a href="@Url.Action("ProductTheoCate","Cate", new {@id=item.id })">@item.CateName</a></li>
+                                        <li class="submenu-title"><a href="#"></a></li>
+                                    }
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Women","ChuDe")">@ViewBag.women</a>
+                                <ul class="submenu">
+
+                                    @foreach (var ab in ViewBag.catewomen)
+                                    {
+                                        <li><a href="@Url.Action("ProductTheoCate","Cate", new {@id=ab.id })">@ab.CateName</a></li>
+                                        <li class="submenu-title"><a href="#"></a></li>
+                                    }
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("DanhMucCate", "Cate")">shop</a>
+                                
+                            </li>
+                            <li>
+                                <a href="blog.html">blog</a>
+                                <ul class="submenu">
+                                    <li class="submenu-title"><a href="#">Blog pages</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li><a href="single-blog.html">Single-blog</a></li>
+                                </ul>
+                            </li>
+                            <!--
+                            <li><a href="about.html">about</a></li> -->
+
+                            
+                            <li><a href="contact.html">contact</a></li>
+                            
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6 col-xs-12">
+                 @Html.Action("GioHangPartial", "GioHang")
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main-Header End -->
+<!-- Mobile-menu start -->
+<div class="mobile-menu-area hidden-md hidden-lg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="mobile-menu">
+                    <nav id="dropdown">
+                        <ul>
+                            <li>
+                                <a href="/">home</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Men","ChuDe")">@ViewBag.men</a>
+                                <ul class="submenu">
+
+                                    @foreach (var ab in ViewBag.catemen)
+                                    {
+                                        <li><a href="@Url.Action("ProductTheoCate","Cate", new {@id=ab.id })">@ab.CateName</a></li>
+                                        <li class="submenu-title"><a href="#"></a></li>
+                                    }
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Women","ChuDe")">@ViewBag.women</a>
+                                <ul class="submenu">
+
+                                    @foreach (var ab in ViewBag.catewomen)
+                                    {
+                                        <li><a href="@Url.Action("ProductTheoCate","Cate", new {@id=ab.id })">@ab.CateName</a></li>
+                                        <li class="submenu-title"><a href="#"></a></li>
+                                    }
+
+                                </ul>
+                            </li>
+                            <li><a href="@Url.Action("DanhMucCate", "Cate")">shop</a></li>
+                            <li>
+                                <a href="blog.html">blog</a>
+                                <ul class="submenu">
+                                    <li class="submenu-title"><a href="#">Blog pages</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li><a href="single-blog.html">Single-blog</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Pages</a>
+                                
+                            </li>
+                            <li><a href="contact.html">contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Mobile-menu end -->

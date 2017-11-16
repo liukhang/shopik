@@ -1,0 +1,194 @@
+﻿
+@{
+    ViewBag.Title = "XemChiTiet";
+    Layout = "~/Views/ShopikLayout/Shopik_Layout1.cshtml";
+}
+
+<section class="page-content">
+    <!-- PAGE-BANNER START -->
+    <div class="page-banner-area margin-bottom-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-banner-menu">
+                        <h2 class="page-banner-title">Single Product</h2>
+                        <ul>
+                            <li><a href="index.html">home</a></li>
+                            <li>Single Product</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- PAGE-BANNER END -->
+    <!-- SINGLE-PRODUCT-AREA START -->
+    <div class="single-product-aea margin-bottom-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-5 col-xs-12">
+                    <div class="single-product-tab-content">
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="img-one">
+                                <img src="@Url.Content("~/HinhAnhSP/"+Model.AnhBia)" alt="">
+                                <a href="@Url.Content("~/HinhAnhSP/"+Model.AnhBia)" data-lightbox="roadtrip" data-title="My caption">
+                                    <span class="view-full-screen"><i class="sp-full-view"></i> view full screen</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Nav tabs -->
+                        
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-7 col-xs-12">
+                    <div class="single-product-description">
+                        <h3 class="title-3">@Model.ProductName</h3>
+                        <h4>@string.Format("{0:0,0}", @Model.Price) VNĐ</h4>
+                        <div class="pro-color">
+                            <span>Color</span>
+                            <a class="color-1" href="#"></a>
+                            <a class="color-2" href="#"></a>
+                            <a class="color-3" href="#"></a>
+                            <a class="color-4" href="#"></a>
+                            <a class="color-5" href="#"></a>
+                        </div>
+                        <div class="pro-size">
+                            <span>Size</span>
+                            <a href="#">xs</a>
+                            <a href="#">s</a>
+                            <a href="#">ml</a>
+                            <a href="#">xl</a>
+                            <a href="#">x</a>
+                        </div>
+                        <div class="product-counts fix margin-top-80">
+                            <form action="#">
+                                <div class="cart-plus-minus"><input type="text" value="1"><div class="inc qtybutton">+</div><div class="dec qtybutton">-</div></div>
+                            </form>
+                            <div class="single-pro-add-cart">
+                                @using (Html.BeginForm("ThemGioHang", "GioHang", new { @id = Model.id, @strURL = Request.Url.ToString(), @class = "shop-now" }))
+                                {
+                                    <input type="submit" value="Add to cart" class="product-item-cart add_to_cart">
+                                }
+                                
+                            </div>
+                        </div>
+                        <div class="single-pro-share">
+                            <ul>
+                                <li><a href="#"><i class="sp-share"></i><span>Share</span></a></li>
+                                <li><a href="#"><i class="sp-heart"></i><span>Add to Wishlist</span></a></li>
+                                <li><a href="#"><i class="sp-compare-alt"></i><span>Compare</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="categories-tags">
+                            <div class="categories">
+                                <span>CATEGORIES:</span>
+                                <a href="#">Lighting,</a>
+                                <a href="#">Mugs &amp; Cups,</a>
+                                <a href="#">Outdoor,</a>
+                                <a href="#">Lights</a>
+                            </div>
+                            <div class="categories tags">
+                                <span>Tags:</span>
+                                <a href="#">Lighting,</a>
+                                <a href="#">Outdoor,</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SINGLE-PRODUCT-AREA END -->
+    <!-- SINGLE-PRODUCT-REVIEWS-AREA START -->
+    <div class="single-product-reviews-area margin-bottom-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="discription-reviews-tab">
+                        <!-- Nav tabs -->
+                        <ul class="reviews-tab-menu" role="tablist">
+                            <li role="presentation" class="active"><a href="#description" data-toggle="tab">Mô Tả</a></li>
+                            <li role="presentation"><a href="#reviews" data-toggle="tab">Reviews</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="description">
+                                <div class="single-pro-product-description">
+                                    <p>@Model.MoTa</p>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="reviews">
+                                <div class="product-page-comments">
+                                    <h2>1 review for Integer consequat ante lectus</h2>
+                                    <ul>
+                                        <li>
+                                            <div class="product-comments">
+                                                <img src="@Url.Content("~/HinhAnhSP/"+Model.AnhBia)" alt="">
+                                                <div class="product-comments-content">
+                                                    <p>
+                                                        <strong>admin</strong> -
+                                                        <span>March 7, 2015:</span>
+                                                        <span class="pro-comments-rating">
+                                                            <i class="sp-star"></i>
+                                                            <i class="sp-star"></i>
+                                                            <i class="sp-star"></i>
+                                                            <i class="sp-star"></i>
+                                                        </span>
+                                                    </p>
+                                                    <div class="desc">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="review-form-wrapper">
+                                        <h3>Add a review</h3>
+                                        <form action="#">
+                                            <input type="text" placeholder="your name" name="firstname">
+                                            <input type="email" placeholder="your email" name="email">
+                                            <div class="your-rating">
+                                                <h5>Your Rating</h5>
+                                                <span>
+                                                    <a href="#"><i class="sp-star"></i></a>
+                                                    <a href="#"><i class="sp-star"></i></a>
+                                                </span>
+                                                <span>
+                                                    <a href="#"><i class="sp-star"></i></a>
+                                                    <a href="#"><i class="sp-star"></i></a>
+                                                    <a href="#"><i class="sp-star"></i></a>
+                                                </span>
+                                                <span>
+                                                    <a href="#"><i class="sp-star"></i></a>
+                                                    <a href="#"><i class="sp-star"></i></a>
+                                                    <a href="#"><i class="sp-star"></i></a>
+                                                    <a href="#"><i class="sp-star"></i></a>
+                                                </span>
+                                                <span>
+                                                    <a href="#"><i class="sp-star"></i></a>
+                                                    <a href="#"><i class="sp-star"></i></a>
+                                                    <a href="#"><i class="sp-star"></i></a>
+                                                    <a href="#"><i class="sp-star"></i></a>
+                                                    <a href="#"><i class="sp-star"></i></a>
+                                                </span>
+                                            </div>
+                                            <textarea id="product-message" cols="30" rows="10" placeholder="Your Rating"></textarea>
+                                            <input type="submit" value="submit">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SINGLE-PRODUCT-REVIEWS-AREA END -->
+    <!-- SINGLE-PRODUCT-RELATED-AREA START -->
+    
+    <!-- SINGLE-PRODUCT-RELATED-AREA END -->
+    <!-- SERVICE-AREA START -->
+    
+    <!-- SERVICE-AREA END -->
+</section>
